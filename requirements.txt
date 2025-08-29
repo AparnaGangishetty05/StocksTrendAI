@@ -1,0 +1,9 @@
+Flask
+Flask-Login
+Flask-SQLAlchemy
+yfinance
+ta
+scikit-learn
+plotly
+pandas
+numpy

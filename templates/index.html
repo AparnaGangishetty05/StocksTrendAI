@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Trend AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #1f1c2c, #928dab);
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .welcome-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            max-width: 500px;
+        }
+        .btn-custom {
+            margin: 0.5rem;
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-box">
+        <h1 class="mb-3">📈 Stock Trend AI</h1>
+
+        {% if current_user.is_authenticated %}
+            <p class="lead">Welcome, {{ current_user.email }}</p>
+            <a href="{{ url_for('dashboard') }}" class="btn btn-success btn-custom">Go to Dashboard</a>
+            <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-custom">Logout</a>
+        {% else %}
+            <p class="lead">Welcome, Guest</p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-custom">Login</a>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-custom">Register</a>
+        {% endif %}
+    </div>
+</body>
+
+</html>
